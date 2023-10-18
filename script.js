@@ -1,17 +1,15 @@
 function decimalToBinary(num) {
   //Write you code here
-	if (isNaN(num) || num < 0 || Math.floor(num) !== num) {
-        return "0";
-    }
-	if(num==0){
-		return "0";
+	let op="";
+	while(num>=2){
+		let reminder=num%2;
+		op=reminder+op;
+		num=parseInt(num/2);
 	}
-  let result="";
-	while(num>0){
-		result+=num%2;
-		num=num/2;
+	if(op===1){
+		op=1+op;
 	}
-	return result;
+	console.log(op);
 }
 
 window.decimalToBinary = decimalToBinary;
